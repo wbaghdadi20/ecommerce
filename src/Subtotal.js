@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { NumericFormat } from "react-number-format";
 import "./Subtotal.css";
 import { useStateValue } from "./StateProvider";
-
-const getBasketTotal = (basket) => {
-  return basket?.reduce((amount, item) => item.price + amount, 0);
-};
+import { getBasketTotal } from "./Reducer";
 
 function Subtotal() {
   // Sample basket data
@@ -15,7 +12,7 @@ function Subtotal() {
     <div className="subtotal">
       <NumericFormat
         value={getBasketTotal(basket)}
-        displayType={"text"}
+        displayType={"text"}  
         thousandSeparator={true}
         decimalScale={2}
         prefix={"$"}

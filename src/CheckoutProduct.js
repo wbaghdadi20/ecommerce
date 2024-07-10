@@ -1,37 +1,31 @@
 import React from "react";
-import "./Product.css";
+import "./CheckoutProduct.css";
 import StarIcon from "@mui/icons-material/Star";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { useStateValue } from "./StateProvider";
 
-function Product({ id, title, price, img, rating }) {
+function CheckoutProduct({ id, title, price, img, rating }) {
   const [{ basket }, dispatch] = useStateValue();
 
-  console.log("This is the basket >>>", basket);
-
-  const addToBasket = () => {
+  const removeFromBasket = () => {
     dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: id,
-        title: title,
-        price: price,
-        img: img,
-        rating: rating,
-      },
+      type: "REMOVE_FROM_BASKET",
+      id: id,
     });
   };
 
   return (
-    <div className="product">
-      <div className="product-info">
-        <p>{title}</p>
-        <p className="product-price">
+    <div className="checkout-product">
+      <img className="checkoutProduct-image" src={img} />
+
+      <div className="checkoutProduct-info">
+        <p className="checkoutProduct-title">{title}</p>
+        <p className="checkoutProduct-price">
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product-rating">
+        <div className="checkoutProduct-rating">
           {[...Array(5)].map((_, i) => {
             const roundedRating = Math.round(rating * 2) / 2;
             if (i < Math.floor(roundedRating)) {
@@ -43,11 +37,10 @@ function Product({ id, title, price, img, rating }) {
             }
           })}
         </div>
+        <button onClick={removeFromBasket}>Remove From Basket</button>
       </div>
-      <img src={img} alt={title} />
-      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }
 
-export default Product;
+export default CheckoutProduct;

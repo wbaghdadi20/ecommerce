@@ -23,10 +23,12 @@ export const Header = () => {
       </div>
 
       <div className="header-nav">
-        <div className="header-option">
-          <span className="header-option-lineOne">Hello Guest</span>
-          <span className="header-option-lineTwo">Sign In</span>
-        </div>
+        <Link to="/login">
+          <div className="header-option">
+            <span className="header-option-lineOne">Hello Guest</span>
+            <span className="header-option-lineTwo">Sign In</span>
+          </div>
+        </Link>
 
         <div className="header-option">
           <span className="header-option-lineOne">Returns</span>
