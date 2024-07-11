@@ -3,6 +3,11 @@
   padding: 20px;
   background-color: white;
   height: max-content;
+  border: 1px solid black;
+}
+
+.checkout-right {
+  flex: 1;
 }
 
 .checkout-ad {

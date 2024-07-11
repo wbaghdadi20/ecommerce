@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
   height: 100px;
   padding: 20px;
   background-color: #f3f3f3;
@@ -28,4 +27,20 @@
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846129;
   color: #111;
+}
+
+@media (max-width: 1089px) {
+  .subtotal {
+    height: 200px;
+  }
+
+  .subtotal > button {
+    height: 35px;
+  }
+}
+
+@media (max-width: 1028px) {
+  .subtotal > button {
+    height: 45px;
+  }
 }

@@ -2,9 +2,11 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  flex: 1;
 }
 
 .checkoutProduct-info {
+  flex-shrink: 1;
   padding-left: 20px;
 }
 
