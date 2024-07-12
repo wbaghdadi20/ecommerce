@@ -5,6 +5,7 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Payment from "./Payment";
+import Orders from "./Orders.js";
 import {
   BrowserRouter as Router,
   Routes,
@@ -47,6 +48,15 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
+          <Route
+            path="/orders"
+            element={
+              <>
+                <Header />
+                <Orders />
+              </>
+            }
+          />
           <Route
             path="/login"
             element={

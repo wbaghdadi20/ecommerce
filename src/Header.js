@@ -45,10 +45,12 @@ export const Header = () => {
           </div>
         </Link>
 
-        <div className="header-option">
-          <span className="header-option-lineOne">Returns</span>
-          <span className="header-option-lineTwo">& Orders</span>
-        </div>
+        <Link to={"/orders"}>
+          <div className="header-option">
+            <span className="header-option-lineOne">Returns</span>
+            <span className="header-option-lineTwo">& Orders</span>
+          </div>
+        </Link>
 
         <div className="header-option">
           <span className="header-option-lineOne">Your</span>
