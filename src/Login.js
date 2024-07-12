@@ -7,7 +7,6 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [username, setUsername] = useState();
 
   const signIn = (e) => {
     e.preventDefault();
@@ -50,13 +49,6 @@ function Login() {
         <h1>Sign In</h1>
 
         <form>
-          <h5>Username</h5>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-
           <h5>E-mail</h5>
           <input
             type="text"
@@ -82,7 +74,7 @@ function Login() {
           Notice
         </p>
 
-        <button type="submit" className="login-regiser-btn" onClick={register}>
+        <button type="submit" className="login-register-btn" onClick={register}>
           Create your Amazon Account
         </button>
       </div>

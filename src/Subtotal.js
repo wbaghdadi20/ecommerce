@@ -9,6 +9,12 @@ function Subtotal() {
   const navigate = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
 
+  const handleProceedToCheckout = (e) => {
+    basket?.length
+      ? navigate("/payment")
+      : alert("Your basket is empty. Add items to proceed to checkout.");
+  };
+
   return (
     <div className="subtotal">
       <NumericFormat
@@ -28,7 +34,7 @@ function Subtotal() {
           </>
         )}
       />
-      <button onClick={(e) => navigate("/payment")}>Proceed to Checkout</button>
+      <button onClick={handleProceedToCheckout}>Proceed to Checkout</button>
     </div>
   );
 }
